@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Optimización de Procesos}
+\author{Miguel Bautista Gaona}
+\date{February 2020}
+
+\begin{document}
+
+\maketitle
+\section{Problemas lineales}
+\begin{itemize}
+    \item Un portafólio ofrece 2 tipos de inversión; en CDT'S y en BONOS. Un cliente desea invertir 5000 dólares en el portafólio el proximo año. La inversión del CDT'S tiene un 5\% de interés anual la inversión en bonos un 8\%. De acuerdo a la experiencia del asesor financiero, se recomienda invertir un máximo del 50\% de los fondos en bonos y un mínimo de 25\% en cdt's. ¿Qué valores se deben invertir en cada alternativa, para obtener el máximo beneficio?. 
+\end{itemize}
+\paragraph{Donde, $x = $ cdts y $y = $ bonos. Entonces, nuestra función a $\max$ es la siguiente: }
+
+$$Z_{\max} = 0.05 x + 0.08 y $$
+
+\paragraph{La función tiene restricciones.}
+
+$$ x + y  = 5000 \ \vee \ x + y \leq  5000 $$
+$$x \leq 2500$$
+$$y \leq 1250$$
+$$ x \geq  0 \ \wedge \ y \geq 0 $$
+
+\paragraph{Las restricciones se dan gracias a el asesor financiero y $ x \geq  0 \ \wedge \ y \geq 0 $ se dan ya que se esta buscando el $\max$ de la función.}
+
+\begin{itemize}
+    \item Una oficina de correos requiere cantidades de empleados de tiempo completo en diferentes días de la semana. La cantidad de empleados de tiempo completo que se requiere cada día se da en la siguiente tabla. Las reglas del sindicato establece que cada empleado de tiempo completo debe trabjar cinco días consecutivos y descansa dos días. Por ejemplo un empleado que trabaja de lunes a viernes debe descansar sábado y domingo. El número de empleados que se necesita cada día está dado por: 
+    lunes: 17, Martes: 13, Miércoles: 15,Jueves: 19, Viernes: 14, Sábado: 16, Domingo: 11. 
+    
+    
+    
+    Plantear el modelo que minimice el número de empleados ($Sugerencia$:  Elija $x_{i}$ como el número de empleados que entrar a trabajar el día $i$)
+\end{itemize}
+$$Z_{\min} = \sum _{i = 1}^{7} x_{i}$$
+\paragraph{Plantiaremos las restricciones pertinentes al problema. Como cada día llegan cantidades diferentes de empleados entonces.}
+$$R_{1}: \ x_{1}+x_{4}+x_{5}+x_{6}+x_{7} \geq 17$$
+$$R_{2}: \ x_{1}+x_{2}+x_{5}+x_{6}+x_{7} \geq 13$$
+$$R_{3}: \ x_{1}+x_{2}+x_{3}+x_{6}+x_{7} \geq 15$$
+$$R_{4}: \ x_{1}+x_{2}+x_{3}+x_{4}+x_{7} \geq 19$$
+$$R_{5}: \ x_{1}+x_{2}+x_{3}+x_{4}+x_{5} \geq 14$$
+$$R_{6}: \ x_{2}+x_{3}+x_{4}+x_{5}+x_{6} \geq 17$$
+$$R_{7}: \ x_{3}+x_{4}+x_{5}+x_{6}+x_{7} \geq 17$$
+$$x \geq 0 $$
+
+\begin{itemize}
+    \item La información nutricinal y costos por porción de distintos alimentos se proporcionan en la siguiente tabla: Se desea saber qué cantidad alquirir de cada alimento, de tal modo que se minimice el costo total de la alimentación en un día, siguendo los requisitos de la nutricionales: 
+    \begin{enumerate}
+        \item Las calorías consumidas deben ser al menos 2000.
+        \item La grasa necesaria es de por lo menos 5$g$
+        \item Se debe consumir por lo menos 100$g$ de proteína
+        \item Se debe consumir al menos 250$g$ de carbohidratos.
+    \end{enumerate}
+
+\end{itemize}
+
+\textbf{Tabla: }
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c c c c c||} 
+ \hline
+ Alimento  & Costo  & Calorías & Grasa(g) & Proteína (g) & Carbohidratos (g)\\ [0.5ex] 
+ \hline\hline
+ Zanahorias & 0.14 & 23 & 0.1 & 0.6 & 6 \\ 
+ Papas Horneadas & 0.12 & 171 & 0.2 & 3.7 &30\\
+ Pan de trigo & 0.2 & 65 & 0 & 2.2 & 13 \\
+ Queso cheddar & 0.75 & 112 & 9.3 & 7 & 0 \\
+ Mantequilla de maní & 0.15 & 188 & 16 & 7.7 & 2 \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+
+\paragraph{Entonces, denotaremos los productos de la siguiente manera la Zanahoria $z$, Papas horneadas $p_{0}$, Pan de trigo $p_{1}$, Queso $q$, Mantequilla $m$, con ello panteamos nuetras función objetivo. }
+
+$$Z_{\min} = z (0.14)+p_{0}(0.12)+p_{1}(0.2)+ q(0.75)+m (0.15)$$
+
+\paragraph{Ahora, vamos a ver las restricciones: }
+\begin{flushleft}
+$$R1 : \  z (23)+p_{0}(171)+p_{1}(65)+ q(112)+m (188) \geq 2000$$
+$$R2 : \  z (0.1)+p_{0}(0.2)+ q(9.3)+m (16) \geq 50g$$
+$$R3 : \  z (0.6)+p_{0}(3.7)+p_{1}(2.2)+ q(7)+m (7.7) \geq 100g$$
+$$R4 : \  z (6)+p_{0}(30)+p_{1}(13)+ +m (2) \geq 250 g$$
+$$x \geq 0$$
+\end{flushleft}
+
+
+\end{document}
