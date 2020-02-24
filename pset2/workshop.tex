@@ -1,0 +1,46 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[spanish, mexico]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Taller}
+\author{Miguel A. Gomez B.}
+
+\begin{document}
+	\maketitle
+\paragraph{1} Demostrar una de las dos contentencias:
+$$CC(A) \subseteq CO(A) \text{ o },$$
+$$CO(A) \subseteq CC(A)$$
+\begin{proof} Dado que el conjunto $A$ es convexo, existe una pareja de $x_n \in A$, tal que $x_a\lambda + (1-\lambda)x_b \in A$, con $\lambda \in [0,1]$ por la definición de conjunto convexo. Suponga ahora la siguiente combinación lineal:
+	$$x_1\lambda_1 + x_2\lambda_2,$$
+tal que la suma de los $\lambda_n = 1$, luego $\lambda_2 = 1 - \lambda_1$, entonces lo anterior se convierte en
+$$x_1\lambda_1 + (1-\lambda_1) x_2$$
+y que es la definición de combinación convexa, ahora supóngase bajo las mismas restricciones sobre $\lambda$, la combinación convexa:
+$$x_1\lambda_1 + x_2\lambda_2 + \dots + x_n\lambda_n$$
+reecribiremos $\lambda_2$ en términos de los demás lambdas:
+\begin{align*}
+	\lambda_2 &= 1 - \lambda_3 - \dots - \lambda_n - \lambda_1\\
+	&= (1 - \lambda_3 - \dots - \lambda_n) - \lambda_1\\
+	&= a - \lambda_1,
+\end{align*}
+de modo que ahora hemos construído un punto que por definición será convexo y por ende,
+$$ x_1\lambda_1 + (a - \lambda_1)x_2 = x_a \in A,$$
+de manera análoga se puede repetir el proceso anterior:
+$$x_a(a-\lambda_3) + x_3 \lambda_3 + \dots + \lambda_n,$$
+$$x_b(b-\lambda_4) + x_4 \lambda_4 + \dots + \lambda_n,$$
+$$\dots,$$
+hasta finalmente obtener la combinación:
+$$x_z(z-\lambda_n) + x_n \lambda_n$$
+y por ende toda combinación convexa estará contenida en el conjunto convexo.
+\end{proof}
+\paragraph{2} Encontrar las direcciones, direcciones extremas y puntos extremos de los conjuntos:
+\begin{itemize}
+	\item El conjunto factible dado en clase.
+	\item $\{(x_1, x_2) \in \mathbb{R}: -x_1 \leq x_2\}$
+\end{itemize}
+\end{document}
